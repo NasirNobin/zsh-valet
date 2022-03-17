@@ -7,7 +7,7 @@ This zsh plugin will read `.valetphprc` from the project root and will switch to
 https://user-images.githubusercontent.com/13833460/158659897-f6376d8d-8dfa-4e2d-a82a-82bb0aafb009.mp4
 </details>
 
-## Install
+## Install (oh-my-zsh)
 1. Clone this repository in oh-my-zsh's plugins directory:
 ```bash
 git clone https://github.com/NasirNobin/zsh-valet ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-valet
@@ -26,6 +26,13 @@ VALETPHPRC_DEFAULT_PHP=php@8.0
 ```
 5. Restart zsh (such as by opening a new instance of your terminal emulator). Now when you cd into your project directory. It should automatically swap to .valetphprc defined PHP binary for that session. 
 
+## Install (non oh-my-zsh)
+Simply clone this repository and source the script:
+
+```bash
+git clone https://github.com/NasirNobin/zsh-valet
+echo "source ${(q-)PWD}/zsh-valet/zsh-valet.plugin.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+```
 
 ## Do not show PHP Version
 If you don't want to show the PHP version change add this to your ` ~/.zshrc`. 
