@@ -55,10 +55,10 @@ valetphprc_run() {
 
 valetphprc_change_php () {
     PHP_VERSION="${1:-$VALETPHPRC_DEFAULT_PHP}"
-    PHP_VERSION=$(echo $PHP_VERSION | gsed "s,php,," | gsed "s,@,,")
+    PHP_VERSION=$(echo $PHP_VERSION | sed "s,php,," | sed "s,@,,")
     PHP_VERSION_BIN_PATH="/opt/homebrew/opt/php@$PHP_VERSION/bin"
     if [ -d "$PHP_VERSION_BIN_PATH" ]; then
-        export PATH=$(echo $PATH | gsed "s,/opt/homebrew/opt/php@.\../bin,$PHP_VERSION_BIN_PATH,g")
+        export PATH=$(echo $PATH | sed "s,/opt/homebrew/opt/php@.\../bin,$PHP_VERSION_BIN_PATH,g")
         
         if [[ "$PATH" != *"$PHP_VERSION"* ]]; then
             export PATH="$PHP_VERSION_BIN_PATH:$PATH"
