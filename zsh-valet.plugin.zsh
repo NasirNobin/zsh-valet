@@ -65,7 +65,6 @@ valetphprc_change_php () {
         fi
 
         if [ "$VALETPHPRC_DO_NOT_SHOW_PHP_VERSION" -ne 1 ]; then
-            echo "VALETPHPRC_DO_NOT_SHOW_PHP_VERSION : $VALETPHPRC_DO_NOT_SHOW_PHP_VERSION"
             echo "Using $(php -v | grep -m1 "PHP")"
         fi
     fi
