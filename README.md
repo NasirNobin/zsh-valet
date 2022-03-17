@@ -39,3 +39,8 @@ If you don't want to show the PHP version change add this to your ` ~/.zshrc`.
 ```bash
 export VALETPHPRC_DO_NOT_SHOW_PHP_VERSION=1
 ```
+
+
+## Beta Testing
+This is still very early version of this plugin. If you see any issues, please open an issue on this repository. 
+Also this seems to work fine on my M1 Mac, I still haven't tested it on Intel Mac (i think homebrew stores the php binary in a different directory on Intel Mac, so it might not work there yet)
