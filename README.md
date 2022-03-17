@@ -1,5 +1,5 @@
 # ZSH Valet
-This zsh plugin will read `.valetphprc` from the project root and will switch to that PHP version automatically real time
+This zsh plugin will read `.valetphprc` from the project root and will switch to that PHP version automatically real time. So `php artisan` & `composer` commands will always run on the project's PHP version when you are using Valet's site isolation feature! 
 
 <details>
 <summary>Here's a quick video demonstration </summary>
