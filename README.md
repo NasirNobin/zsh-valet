@@ -41,6 +41,24 @@ export VALETPHPRC_DO_NOT_SHOW_PHP_VERSION=1
 ```
 
 
+
+## Recommanded PHP installation method
+If for some reason this plugin doesn't work with your environemnt. We recommand you uninstall your PHP versions and reinstall with this following method. 
+```bash
+brew tap shivammathur/php
+
+
+# install your required php versions
+brew install shivammathur/php/php@8.1
+brew install shivammathur/php/php@8.0
+brew install shivammathur/php/php@7.4
+brew install shivammathur/php/php@7.3
+brew install shivammathur/php/php@7.2
+brew install shivammathur/php/php@7.0
+brew install shivammathur/php/php@5.6
+```
+
+
 ## Beta Testing
 This is still very early version of this plugin. If you see any issues, please open an issue on this repository. 
 Also this seems to work fine on my M1 Mac, I still haven't tested it on Intel Mac (i think homebrew stores the php binary in a different directory on Intel Mac, so it might not work there yet)
