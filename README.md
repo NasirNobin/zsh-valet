@@ -42,8 +42,8 @@ export VALETPHPRC_DO_NOT_SHOW_PHP_VERSION=1
 
 
 
-## Recommanded PHP installation method
-If for some reason this plugin doesn't work with your environemnt. We recommand you uninstall your PHP versions and reinstall with this following method. 
+## Recommended PHP installation method
+If for some reason this plugin doesn't work with your environment. We recommend you uninstall your PHP versions and reinstall with the following method.
 ```bash
 brew tap shivammathur/php
 
