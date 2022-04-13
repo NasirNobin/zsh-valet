@@ -1,7 +1,7 @@
-# homebrew-instant-php-version-swap.zsh
+# zsh-valet
 #
 # @author: NasirNobin
-# @url https://gist.github.com/NasirNobin/3e5992608df21389dded1ac1661e1c7c
+# @url https://github.com/NasirNobin/zsh-valet
 # @url https://github.com/seanyeh/autosrc
 
 VALETPHPRC=".valetphprc"
@@ -26,6 +26,8 @@ valetphprc_run() {
     if [ "$VALETPHPRC_IGNORE" -eq 1 ]; then
         return
     fi
+
+    export VIRTUAL_ENV=""
 
     local cur_pwd="$(pwd)"
 
@@ -58,15 +60,18 @@ valetphprc_change_php () {
     PHP_VERSION=$(echo $PHP_VERSION | sed "s,php,," | sed "s,@,,")
     PHP_VERSION_BIN_PATH="/opt/homebrew/opt/php@$PHP_VERSION/bin"
     if [ -d "$PHP_VERSION_BIN_PATH" ]; then
-        export PATH=$(echo $PATH | sed "s,/opt/homebrew/opt/php@.\../bin,$PHP_VERSION_BIN_PATH,g")
+        PATH=$(echo $PATH | sed "s,/opt/homebrew/opt/php@.\../bin,$PHP_VERSION_BIN_PATH,g")
         
         if [[ "$PATH" != *"$PHP_VERSION"* ]]; then
-            export PATH="$PHP_VERSION_BIN_PATH:$PATH"
+            PATH="$PHP_VERSION_BIN_PATH:$PATH"
         fi
 
         if [ "$VALETPHPRC_DO_NOT_SHOW_PHP_VERSION" -ne 1 ]; then
             echo "Using $(php -v | grep -m1 "PHP")"
         fi
+
+        export VIRTUAL_ENV="${PHP_VERSION}"
+        export PATH
     fi
 }
 
