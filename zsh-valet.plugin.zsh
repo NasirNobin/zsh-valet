@@ -27,8 +27,6 @@ valetphprc_run() {
         return
     fi
 
-    export VIRTUAL_ENV=""
-
     local cur_pwd="$(pwd)"
 
     # If same dir, exit
@@ -47,6 +45,7 @@ valetphprc_run() {
     # change php path for default .valetphprc
     if [ -n "$prev_valetphprc" ] && [ -n $VALETPHPRC_DEFAULT_PHP ]; then
         valetphprc_change_php $VALETPHPRC_DEFAULT_PHP
+        unset VIRTUAL_ENV
     fi
 
     # change php path for current .valetphprc
@@ -72,6 +71,8 @@ valetphprc_change_php () {
 
         export VIRTUAL_ENV="php@${PHP_VERSION}"
         export PATH
+    else
+        unset VIRTUAL_ENV
     fi
 }
 
