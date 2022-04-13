@@ -59,6 +59,7 @@ valetphprc_change_php () {
     PHP_VERSION="${1:-$VALETPHPRC_DEFAULT_PHP}"
     PHP_VERSION=$(echo $PHP_VERSION | sed "s,php,," | sed "s,@,,")
     PHP_VERSION_BIN_PATH="/opt/homebrew/opt/php@$PHP_VERSION/bin"
+    export VIRTUAL_ENV=""
     if [ -d "$PHP_VERSION_BIN_PATH" ]; then
         PATH=$(echo $PATH | sed "s,/opt/homebrew/opt/php@.\../bin,$PHP_VERSION_BIN_PATH,g")
         
@@ -66,11 +67,11 @@ valetphprc_change_php () {
             PATH="$PHP_VERSION_BIN_PATH:$PATH"
         fi
 
-        if [ "$VALETPHPRC_DO_NOT_SHOW_PHP_VERSION" -ne 1 ]; then
+        if [ "$VALETPHPRC_SHOW_PHP_VERSION_CHANGE" -eq 1 ]; then
             echo "Using $(php -v | grep -m1 "PHP")"
         fi
 
-        export VIRTUAL_ENV="${PHP_VERSION}"
+        export VIRTUAL_ENV="php@${PHP_VERSION}"
         export PATH
     fi
 }

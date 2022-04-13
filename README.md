@@ -34,10 +34,10 @@ git clone https://github.com/NasirNobin/zsh-valet
 echo "source ${(q-)PWD}/zsh-valet/zsh-valet.plugin.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 ```
 
-## Do not show PHP Version
-If you don't want to show the PHP version change add this to your ` ~/.zshrc`. 
+## Show PHP Version Output
+If you want to show the PHP version change add this to your ` ~/.zshrc`. 
 ```bash
-export VALETPHPRC_DO_NOT_SHOW_PHP_VERSION=1
+export VALETPHPRC_SHOW_PHP_VERSION_CHANGE=1
 ```
 
 
