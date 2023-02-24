@@ -1,5 +1,5 @@
 # ZSH Valet
-This zsh plugin will read `.valetphprc` from the project root and will switch to that PHP version automatically real time. So `php artisan` & `composer` commands will always run on the project's PHP version when you are using Valet's site isolation feature! 
+This zsh plugin will read from the project root and will switch to that PHP version automatically real time. So `php artisan` & `composer` commands will always run on the project's PHP version when you are using Valet's site isolation feature! 
 
 <details>
 <summary>Here's a quick video demonstration </summary>
@@ -15,16 +15,12 @@ git clone https://github.com/NasirNobin/zsh-valet ${ZSH_CUSTOM:-~/.oh-my-zsh/cus
 2. Activate the plugin in `~/.zshrc`:
 ```
 plugins=( [plugins...] zsh-valet)
-```
-3. Create a file named `.valetphprc` in your project directory with following project's PHP version. Example:  
-```bash
-php@8.1
-```
-4. Optionally, You can define a default PHP version on your `.zshrc`. This will be used to reset PHP Binary when you exit a project directory. (Make sure to put before the `plugins=( [plugins...] zsh-valet)` block)
+
+3. Optionally, You can define a default PHP version on your `.zshrc`. This will be used to reset PHP Binary when you exit a project directory. (Make sure to put before the `plugins=( [plugins...] zsh-valet)` block)
 ```bash
 VALETPHPRC_DEFAULT_PHP=php@8.0
 ```
-5. Restart zsh (such as by opening a new instance of your terminal emulator). Now when you cd into your project directory. It should automatically swap to .valetphprc defined PHP binary for that session. 
+4. Restart zsh (such as by opening a new instance of your terminal emulator). Now when you cd into your project directory. It should automatically swap to .valetphprc defined PHP binary for that session. 
 
 ## Install (non oh-my-zsh)
 Simply clone this repository and source the script:
